@@ -1,0 +1,7 @@
+.back{
+float: left;
+ padding: 1em;
+ width: 70%;
+ border: 10px solid gray; /* 枠線 */
+ text-align: left;
+}
