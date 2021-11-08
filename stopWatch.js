@@ -59,6 +59,9 @@
    
    //スタートボタン押下時
     start.addEventListener('click',function(){
+        start.disabled=true;
+        stop.disabled=false;
+        reset.disabled=false;
         stopFlag=0;
         //ストップ時に保存した時間を取得
         getMsec();
@@ -66,7 +69,9 @@
     
     //ストップボタン押下時
      stop.addEventListener('click',function(){
-
+      stop.disabled=true;
+      start.disabled=false;
+      reset.disabled=false;
         //カウント止める
         clearInterval(intervalId);　//intervalIdをclearIntervalで指定している
         stopFlag=1;
@@ -74,7 +79,15 @@
     });
     
     reset.addEventListener('click',function(){
+      reset.disabled=true;
+      stop.disabled=true;
+      start.disabled=false;
         stopFlag=1;
+        clearInterval(intervalId);　//intervalIdをclearIntervalで指定している
+        
+        stopWatch.textContent ='0:0:0:0';      
+        count=0;
+
     });
  })();
     
